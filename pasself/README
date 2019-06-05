@@ -1,10 +1,13 @@
-version_01:
-------
+# `pasself` - password for my self
 
-- the default key to access/open to run the script
-- encrypt the file with AES crypto
-- format with one credential:
-```
+## what-is-it-?
+----
+hope this tool will help my life easier and save my memory
+  - store credentials binary and filter
+  
+#### version-01:
+  - initial tool with structure data format
+```sh
 [
   {
     "username": "foo_username",
@@ -24,18 +27,39 @@ version_01:
   }
 ]
 ```
-- filter with parameter
-```
+  - crypto and filter basic function
+```sh
   [1] $0 -u|--username foo
   [2] $0 -d|--description foo 
   [3] $0 -w|--website foo
   [4] $0 -a | --all foo
+``` 
 
-  [1] foo_username
-  [2] this is account to login foo.com
-  [3] http://foo.com
-  [4.1] foo_username
-  [4.2] this is account to login foo.com
-  [4.3] http://foo.com
-  -> do you want to get the password of?
-```
+#### version-02:
+  - add/update/delete credential function
+  - not show plaint text password on console, get the password via email
+  - refactor, flake8 scripts
+
+## url-reference
+----
+  - [python-pycrypto-encrypt-decrypt-text-files-with-aes]
+  - [python-base64-data-decode]
+  - [python-print-pretty-table-list]
+
+## pip-packages
+----
+| name | use-for |
+| ------ | ------ |
+| argparse | parser for command-line options, arguments and sub-commands |
+| os | miscellaneous operating system interfaces |
+| json | JSON encoder and decoder |
+| tabulate | pretty-print tabular data in Python, a library and a command-line utility |
+
+## license
+----
+MIT
+**Free Software, Hell Yeah!**
+
+  [python-pycrypto-encrypt-decrypt-text-files-with-aes]:  <https://stackoverflow.com/questions/20852664/python-pycrypto-encrypt-decrypt-text-files-with-aes>
+  [python-base64-data-decode]: <https://stackoverflow.com/questions/3470546/python-base64-data-decode>
+  [python-print-pretty-table-list]: <https://blog.softhints.com/python-print-pretty-table-list/>

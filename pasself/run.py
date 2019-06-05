@@ -17,18 +17,18 @@ def fourmat(data):
 
 def izpass(**keywords):
     try:
-	    key = "{: <32}".format(os.environ['PWSELF_KEY']).encode("utf-8")
-	    #  -- b.decrypt_file('.credential/to_enc.txt.enc', key)
+        key = "{: <32}".format(os.environ['PWSELF_KEY']).encode("utf-8")
+	#  -- b.decrypt_file('.credential/to_enc.txt.enc', key)
         #  -- b.encrypt_file('to_enc.txt', key)
     except Exception as e:
     	print("[FM02-00] missing system environment", e)
 
-    with open(".credential/to_enc.txt") as js: 
+    with open(".credential/to_enc.txt") as js:
         json_data = json.loads(js.read())
-        
+
         result = []
         for arg in sorted(keywords.keys()):
-            if keywords[arg]:  
+            if keywords[arg]:
                 for i in json_data:
                     if keywords[arg] in i[arg]:
                        result.append([ \
