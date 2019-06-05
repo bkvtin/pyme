@@ -1,7 +1,6 @@
 # `euler` - project euler
 
 ## what-is-it-?
-----
 That depends on your background. There are two tables containing problems. The Recent problems table lists the ten most recently published problems, so if you are new to Project Euler then you may prefer to start with the Archives to get a feel for the different types/difficulties of our problems. The first one-hundred or so problems are generally considered to be easier than the problems which follow. In the archives table you will be able to see how many people have solved each problem; as a general rule of thumb the more people that have solved it, the easier it is. To assist further there is a difficulty rating system which may also help you decide where to start. You are able to sort the problems in the archives table on ID, Solved By, or Difficulty.
 
 ## my-currrent-state
@@ -12,7 +11,6 @@ That depends on your background. There are two tables containing problems. The R
 # `pasself` - password for my self
 
 ## what-is-it-?
-----
 hope this tool will help my life easier and save my memory
   - store credentials binary and filter
   
@@ -52,13 +50,11 @@ hope this tool will help my life easier and save my memory
   - refactor, flake8 scripts
 
 ## url-reference
-----
   - [python-pycrypto-encrypt-decrypt-text-files-with-aes]
   - [python-base64-data-decode]
   - [python-print-pretty-table-list]
 
 ## pip-packages
-----
 | name | use-for |
 | ------ | ------ |
 | argparse | parser for command-line options, arguments and sub-commands |
@@ -67,7 +63,6 @@ hope this tool will help my life easier and save my memory
 | tabulate | pretty-print tabular data in Python, a library and a command-line utility |
 
 ## license
-----
 MIT
 **Free Software, Hell Yeah!**
 
