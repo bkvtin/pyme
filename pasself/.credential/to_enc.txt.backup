@@ -1,0 +1,18 @@
+[
+  {
+    "username": "foo_username",
+    "password": "foo_password",
+    "website": "http://foo.com",
+    "description": "this is account to login foo.com",
+    "created_at": "YYYY-MM-DD:HH-MM-SS",
+    "last_modified": "YYYY-MM-DD:HH-MM-SS"
+  },
+  {
+    "username": "bar_username",
+    "password": "bar_password",
+    "website": "http://bar.com",
+    "description": "this is account to login bar.com",
+    "created_at": "YYYY-MM-DD:HH-MM-SS",
+    "last_modified": "YYYY-MM-DD:HH-MM-SS"
+  }
+]
