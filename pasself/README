@@ -1,0 +1,41 @@
+version_01:
+------
+
+- the default key to access/open to run the script
+- encrypt the file with AES crypto
+- format with one credential:
+```
+[
+  {
+    "username": "foo_username",
+    "password": "foo_password",
+    "website": "http://foo.com",
+    "description": "this is account to login foo.com",
+    "created_at": "YYYY-MM-DD:HH-MM-SS",
+    "last_modified": "YYYY-MM-DD:HH-MM-SS"
+  },
+  {
+    "username": "bar_username",
+    "password": "bar_password",
+    "website": "http://bar.com",
+    "description": "this is account to login bar.com",
+    "created_at": "YYYY-MM-DD:HH-MM-SS",
+    "last_modified": "YYYY-MM-DD:HH-MM-SS"
+  }
+]
+```
+- filter with parameter
+```
+  [1] $0 -u|--username foo
+  [2] $0 -d|--description foo 
+  [3] $0 -w|--website foo
+  [4] $0 -a | --all foo
+
+  [1] foo_username
+  [2] this is account to login foo.com
+  [3] http://foo.com
+  [4.1] foo_username
+  [4.2] this is account to login foo.com
+  [4.3] http://foo.com
+  -> do you want to get the password of?
+```

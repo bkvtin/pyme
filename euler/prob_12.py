@@ -33,7 +33,6 @@ def triangle_number(data):
 def prob_12():
   count = 1
   while True:
-    
     result = []
     num = triangle_number(count)
 
