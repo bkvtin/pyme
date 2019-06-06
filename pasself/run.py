@@ -8,17 +8,17 @@ from tabulate import tabulate
 
 def fourmat(data):
     print (tabulate(data, headers=[ \
+    	"No", \
         "Username", \
         "Description", \
         "Website", \
         "Created At", \
         "Last Modified"]))
 
-
 def izpass(**keywords):
     try:
         key = "{: <32}".format(os.environ['PWSELF_KEY']).encode("utf-8")
-	#  -- b.decrypt_file('.credential/to_enc.txt.enc', key)
+	    #  -- b.decrypt_file('.credential/to_enc.txt.enc', key)
         #  -- b.encrypt_file('to_enc.txt', key)
     except Exception as e:
     	print("[FM02-00] missing system environment", e)
@@ -26,19 +26,33 @@ def izpass(**keywords):
     with open(".credential/to_enc.txt") as js:
         json_data = json.loads(js.read())
 
-        result = []
+        res_show = []
+        res_pass = []
+        num = 1
         for arg in sorted(keywords.keys()):
             if keywords[arg]:
                 for i in json_data:
                     if keywords[arg] in i[arg]:
-                       result.append([ \
-                           i['username'], \
-                           i['description'], \
-                           i['website'], \
-                           i['created_at'], \
-                           i['last_modified']])
-                       #print(result)
-                fourmat(result)
+                        res_show.append([ \
+                            num, \
+                            i['username'], \
+                            i['description'], \
+                            i['website'], \
+                            i['created_at'], \
+                            i['last_modified']])
+
+                        res_pass.append([ \
+                        	num, \
+                        	i['password']])
+
+                        num += 1
+                fourmat(res_show)
+
+        variable = int(input(''':: which_user_comma_you_wanna_get_password_question '''))
+        for i in res_show:
+            for k, v in dict(res_pass).items():
+                if i[0] == variable and k == variable:
+                    print(v)
 
 
 def main():

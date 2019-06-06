@@ -22,5 +22,21 @@
     "description": "this is account to login foobar.com",
     "created_at": "YYYY-MM-DD:HH-MM-SS",
     "last_modified": "YYYY-MM-DD:HH-MM-SS"
+  },
+    {
+    "username": "user@outlook.com",
+    "password": "password_user",
+    "website": "http://console.amazon.com",
+    "description": "this is account to login aws.com",
+    "created_at": "YYYY-MM-DD:HH-MM-SS",
+    "last_modified": "YYYY-MM-DD:HH-MM-SS"
+  },
+    {
+    "username": "test@gmail.com",
+    "password": "password_test",
+    "website": "http://console.amazon.com",
+    "description": "this is account to login aws.com",
+    "created_at": "YYYY-MM-DD:HH-MM-SS",
+    "last_modified": "YYYY-MM-DD:HH-MM-SS"
   }
 ]
