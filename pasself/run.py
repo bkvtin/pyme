@@ -2,18 +2,25 @@
 import argparse
 import os
 import json
+import random
 from lib import bcrypt as b
 from tabulate import tabulate
 
 
 def fourmat(data):
-    print (tabulate(data, headers=[ \
-    	"No", \
-        "Username", \
-        "Description", \
-        "Website", \
-        "Created At", \
-        "Last Modified"]))
+    print("\n")
+    if type(data[0][0]) is not int: 
+        print (tabulate(data, headers=["Password"]))
+    else:
+        print (tabulate(data, headers=[ \
+            "No", \
+            "Username", \
+            "Description", \
+            "Website", \
+            "Created At", \
+            "Last Modified"]))
+    print("\n")
+
 
 def izpass(**keywords):
     try:
@@ -21,8 +28,8 @@ def izpass(**keywords):
 	    #  -- b.decrypt_file('.credential/to_enc.txt.enc', key)
         #  -- b.encrypt_file('to_enc.txt', key)
     except Exception as e:
-    	print("[FM02-00] missing system environment", e)
-
+    	print("[FM02-00] missing_system_environment", e)
+        
     with open(".credential/to_enc.txt") as js:
         json_data = json.loads(js.read())
 
@@ -48,11 +55,14 @@ def izpass(**keywords):
                         num += 1
                 fourmat(res_show)
 
-        variable = int(input(''':: which_user_comma_you_wanna_get_password_question '''))
-        for i in res_show:
-            for k, v in dict(res_pass).items():
-                if i[0] == variable and k == variable:
-                    print(v)
+        try:
+            variable = int(input("{} which_user_comma_you_wanna_get_password_question ".format(chr(127800))))
+            for i in res_show:
+                for k, v in dict(res_pass).items():
+                    if i[0] == variable and k == variable:
+                        fourmat([["{} {}".format(chr(random.randint(127800, 127900)), v)]])
+        except ValueError as e:
+            print("[FM02-01] wrong_type_input", e)
 
 
 def main():
