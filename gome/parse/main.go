@@ -10,7 +10,7 @@ type Student struct {
 	LastName    string `json:"last_name"`
 	Email       string `json:"email"`
 	Age         int    `json:"age"`
-	ClassName   string `json:"class_name"`
+	ClassName   string `json:"course_name"`
 	AcademyName string `json:"acedemy_name"`
 }
 
@@ -25,6 +25,6 @@ func main() {
 	data := Student{}
 
 	json.Unmarshal([]byte(s), &data)
-	fmt.Printf("Operation: %s", data.FirstName)
+	fmt.Printf("FirstName: %s", data.FirstName)
 }
 
